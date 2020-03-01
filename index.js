@@ -1,4 +1,5 @@
 let hr, mn, sec;
+let d, m, y;
 
 function setup(){
     createCanvas(800, 800);
@@ -7,6 +8,7 @@ function setup(){
 function draw(){
     background(0);
     hr = hour(); mn = minute(); sec = second();
+    d = day(); m = month(); y = year();
     strokeWeight(8)
     noFill();
     stroke(255, 0, 0);
@@ -24,4 +26,10 @@ function draw(){
     let hrStr = (hr<10)? '0' + hr.toString() : hr ;
     let time = `${hrStr}:${mnStr}:${secStr}`;
     text(time, 250, 420);
+    textSize(50)
+    let dStr = (d<10)? '0' + d.toString() : d ;
+    let mStr = (m<10)? '0' + m.toString() : m ;
+    let yStr = (y<10)? '0' + y.toString() : y ;
+    let data = `${dStr}/${mStr}/${yStr}`;
+    text(data, 250, 50);
 }
